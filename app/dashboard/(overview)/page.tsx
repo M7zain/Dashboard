@@ -39,7 +39,6 @@ export default async function Page() {
 
 
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
-
         <Suspense fallback={<LatestInvoicesSkeleton/>}>
           <LatestInvoices/>
         </Suspense>
