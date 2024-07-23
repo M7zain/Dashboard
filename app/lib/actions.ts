@@ -13,13 +13,9 @@ const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
 
 export async function createInvoice(formData: FormData){ 
-    const rawFormData  = { 
+    const {customerId , amount , status }  = CreateInvoice.parse({ 
         customerId : formData.get('cutomerId'), 
         amount     : formData.get('amount'), 
         status     : formData.get('status'), 
 
-    }; 
-
-    // console.log(rawFormData); 
-    console.log(typeof rawFormData.amount); 
-}
+    });}
