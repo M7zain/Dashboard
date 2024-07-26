@@ -7,8 +7,16 @@ export const metadata: Metadata = {
   title: 'customers',
 };
 
-export default async function(){
-  const query = ''; 
+export default async function customersPage({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+  };
+}){
+  
+  const query = searchParams?.query || '' ;
+
   const customers = await fetchFilteredCustomers(query);
   return (
     <div>
